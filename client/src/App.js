@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import TasksTable from './components/TasksTable/TasksTable';
 
 class App extends React.Component {
   constructor() {
@@ -25,11 +26,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Hello!</h1>
-        <ul>
-          {this.state.tasks.map(item => (
-            <li key={item._id}>{item.name}</li>
-          ))}
-        </ul>
+        <TasksTable data={this.state.tasks} />
       </div>
     );
   }
